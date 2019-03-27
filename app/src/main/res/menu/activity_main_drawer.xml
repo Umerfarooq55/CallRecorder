@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_cloud"
+            android:visible="false"
+            android:icon="@drawable/ic_cloud_black_24dp"
+            android:title="@string/nav_cloud" />
+        <item
+            android:id="@+id/nav_storage"
+            android:icon="@drawable/ic_storage_black_24dp"
+            android:title="@string/nav_storage" />
+
+    </group>
+
+    <item android:title="@string/nav_more_option_title">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/nav_settings" />
+            <item
+                android:id="@+id/nav_troubleshooting"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/nav_troubleshooting" />
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_drawer_rate"
+                android:title="@string/nav_rate" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="@string/nav_about" />
+
+        </menu>
+    </item>
+
+
+</menu>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <solid 
+       android:color="@color/colorPrimaryDark"/>
+<!-- 
+   <size 
+       android:width="@dimen/drawer_list_item_icon_width_bounder"
+       android:height="@dimen/drawer_list_item_icon_height_bounder"/> -->
+</shape>

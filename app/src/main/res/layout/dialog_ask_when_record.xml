@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+    
+    <RelativeLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+    <TextView
+        android:id="@+id/dialog_ask_when_record_txt_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dialog_ask_when_record_btn_record_textsize"
+        android:text="@string/string_warning_record_a_call"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/dialog_ask_when_record_txt_message"
+        android:layout_marginTop="5dp"
+        android:weightSum="2"
+        android:background="#BEBEBE" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/dialog_ask_when_record_btn_record"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="recordThisCall"
+            android:textColor="@color/black"
+            android:background="@drawable/btn_light_theme_selector"
+            android:textSize="@dimen/dialog_ask_when_record_btn_record_textsize"
+            android:text="@string/string_record" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#BEBEBE" />
+
+        <Button
+            android:id="@+id/dialog_ask_when_record_btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="dismissDialog"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dialog_ask_when_record_btn_record_textsize"
+            android:background="@drawable/btn_light_theme_selector"
+            android:text="@string/string_cancel" />
+    </LinearLayout>
+ </RelativeLayout>
+</RelativeLayout>

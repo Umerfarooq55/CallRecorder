@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <EditText
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:editable="false"
+        android:cursorVisible="false"
+        android:background="@null"
+        android:paddingRight="24dp"
+        android:paddingTop="20dp"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+
+        android:maxLines="16"
+        android:text="@string/dialog_inform_limit_inbox_content"
+        android:textSize="@dimen/dialog_inform_inbox_limitation_context_textsize" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="24dp"
+        android:button="@drawable/custom_checkbox"
+        android:textColor="@color/colorNoAvatar"
+        android:text="@string/checkbox_dont_show_again"
+        android:textSize="@dimen/dialog_inform_inbox_limitation_context_textsize" />
+
+</RelativeLayout>

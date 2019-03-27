@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingRight="0dp"
+    android:orientation="horizontal" >
+
+    <automatic.phonerecorder.callrecorder.customview.SwitchButton
+        android:id="@+id/switchForActionBar"
+        android:layout_width="50dp"
+        android:layout_height="23dp"
+        app:kswThumbDrawable="@drawable/miui_thumb_drawable"
+        app:kswBackDrawable="@drawable/miui_back_drawable"
+        android:checked="true"
+        android:textOn=""
+        android:textOff="" />
+
+</RelativeLayout>

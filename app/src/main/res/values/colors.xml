@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="tabsScrollColor">#8a140e</color>
+    <color name="toolbarBackground">#263238</color>
+    <color name="enableServiceHint">#FF9900</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#BBBBBB</color>
+    <color name="actionmodeBackground">#bf1e2e</color>
+    <color name="colorNoAvatar">#7A7A7A</color>
+    <color name="selected_overlay">#88BBBBBB</color>
+    <color name="red">#ff3a25</color>
+
+</resources>

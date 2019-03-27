@@ -1,0 +1,223 @@
+<resources>
+    <array name="context_menu_item_priority_contact">
+        <item>Supprimer</item>
+        <item>Voir détails du contact</item>
+    </array>
+
+    <string name="app_name">Enregistreur d\'appels</string>
+
+    <string name="navigation_drawer_open">Ouvrir navigation</string>
+    <string name="navigation_drawer_close">Fermer navigation</string>
+
+    <string name="action_settings">Réglages</string>
+    <string name="action_search">Rechercher</string>
+    <string name="tab_inbox">Boite de réception</string>
+    <string name="tab_favorite">Sauvegardés</string>
+
+    <!-- Menu -->
+    <string name="nav_cloud">Stockage Dropbox</string>
+    <string name="nav_storage">Gestionnaire d\'enregistrements</string>
+    <string name="nav_settings">Réglages</string>
+    <string name="nav_about">A propos de l\'appli</string>
+    <string name="nav_share">Partager</string>
+    <string name="nav_more_option_title">Options avancées</string>
+    <string name="delete">Supprimer</string>
+    <string name="share">Partager</string>
+    <string name="save">Sauvegarder</string>
+    <string name="upload">Charger</string>
+    <string name="history">Historique</string>
+    <string name="detail">Détails</string>
+    <string name="add_contact">Ajouter contact</string>
+
+    <!-- Setting -->
+    <string name="category_audio_name">Réglages Audio</string>
+    <string name="out_put_file_type_description">Sélectionner le format audio</string>
+    <string name="out_put_file_title">Choisir le format du fichier audio</string>
+    <string name="audio_source">Choisir la source audio</string>
+    <string name="category_notification_name">Notifications</string>
+    <string name="enable_notication_title">Activer les notification d\'enregistrement</string>
+    <string name="enable_notication_decription">Afficher notifications d\'enregistrement sur l\'ecran</string>
+    <string name="enable_always_ask_title">Toujours demander</string>
+    <string name="enable_always_ask_description">Demander avant d\'enregistrer</string>
+    <string name="category_filter_recorder">Filtre d\enregistrement</string>
+    <string name="mode_recorder_title">Mode d\enregistrement</string>
+    <string name="mode_recorder_description">Choisir le mode d\enregistrement</string>
+    <string name="priority_contacts_title">Contacts prioritaires</string>
+    <string name="priority_contacts_description">Gérer les contacts à enregistrer (dispo uniquement en mode Contacts prioritaires)</string>
+    <string name="inbox_size_title">Taille de la Boite de réception</string>
+    <string name="inbox_size_description">Nombre maxi d\enregistrement à stocker dans la boite de réception</string>
+    <string name="save_recording_note_title">Enregistrer l\'appel</string>
+    <string name="save_recording_note_description">Enregistrer l\'appel après l\'ajout de notes</string>
+    <string name="category_more_option_name">Options avancées</string>
+    <string name="shake_cancel_record_title">Enregistrer l\'appel en remuant le téléphone</string>
+    <string name="shake_cancel_record_description">Remuer le téléphone pour enregistrer/annuler un enregistrement</string>
+    <string name="enable_private_mode_title">Protection par mot de passe</string>
+    <string name="enable_private_mode_description">Activer la protection par mot de passe à l\'ouverture</string>
+    <string name="use_24_hour_format">Utiliser le format 24h pour l\'historique d\'appels</string>
+    <string name="beep_sound_when_record_title">Activer la notification sonore</string>
+    <string name="beep_sound_when_record_description">Jouer un signal sonore pendant l\'enregistrement à chaque 30s</string>
+    <string name="dialog_warning_disable_notification_message">Votre système peut arreter l\'appli et causer son dysfonctionnement. \n
+    Voulez-vous vraiment désactiver les notifications?</string>
+    <string name="dialog_warning_over_inbox_limit_title">Avertissement</string>
+    <string name="dialog_warning_over_inbox_limit_message">Vos enregistrements dépassent la taille de votre boite de réception.
+                Pour libérer de l\'espace, vous devez supprimer les anciens enregistrements. \n Voulez-vous vraiment continuer?</string>
+    <!-- Note -->
+    <string name="note">Notes</string>
+
+    <!-- Notification -->
+    <string name="notification_stop_recording">Appuyez pour annuler l\'enregistrement</string>
+    <string name="warning_unable_record">Enregistreur d\'appels n\'a pas pu lancer l\'enregistrement</string>
+    <string name="record_impossible">Malheureusement, il n\'est pas possible d\'enregistrer les appels sur cet appareil.
+        (Cela arrive en général quand une autre application utilise le microphone de l\'appareil)</string>
+    <string name="string_warning_record_a_call">Souhaitez-vous enregistrer cet appel?</string>
+
+    <!-- common string -->
+    <string name="string_ok">OK</string>
+    <string name="string_yes">Oui</string>
+    <string name="string_no">Non</string>
+    <string name="string_cancel">Annuler</string>
+    <string name="string_record">Enregistrer</string>
+    <string name="player_note_hint">Pas de note</string>
+    <string name="unknow_number">Inconnu</string>
+    <string name="empty_histoty_page">Pas d\'enregistrement trouvé</string>
+    <string name="empty_contact_history">Pas d\'historique</string>
+    <string name="waiting_load_content">Veuillez patienter.\.\.</string>
+    <string name="header_context_menu">Seléctionner</string>
+    <!-- Date -->
+    <string name="days">jours</string>
+    <string name="hours">heures</string>
+    <string name="minutes">minutes</string>
+    <string name="seconds">secondes</string>
+
+    <string name="selected_count">Sélectionné</string>
+
+    <!-- Player -->
+    <string name="player_title">Lecteur d\'enregistrements</string>
+    <string name="player_history_label">Historique de contacts depuis </string>
+    <string name="player_save_success_notice">note enregistrée avec succès</string>
+    <string name="player_save_unsuccess_notice">Note non enregistrée</string>
+    <string name="player_history_from_inbox">Boite de réception</string>
+    <string name="player_history_from_favorite">Favoris</string>
+    <string name="ask_save_this_recording_dialog">Déplacer l\'enregistrement vers l\'onglet "Sauvegardés"?</string>
+    <string name="share_this_record_dialog_title">Partager cet appel</string>
+    <string name="contact_history_title">Historique contact</string>
+    <string name="priority_contact_title">Contacts prioritaires</string>
+    <!-- Dialog -->
+    <string name="dialog_detail_phone_number">Numéro: </string>
+    <string name="dialog_detail_file_type">Type du fichier: </string>
+    <string name="dialog_detail_file_size">Taille de l\'enregistrement: </string>
+    <string name="dialog_detail_file_duration">Durée: </string>
+    <string name="dialog_detail_file_path">Chemin du fichier: </string>
+
+    <!-- file management -->
+    <string name="file_is_not_exist">Ce fichier a été supprimé de la mémoire</string>
+    <!-- Permission -->
+    <string name="dialog_request_overlay_permision_message">Vous devez autoriser l\'accès à </string>
+    <string name="no_permission">Permissions requises refusées </string>
+    <string name="permission_record_audio">Enregistrer les appels</string>
+    <string name="permission_read_contacts">Lire les contacts</string>
+    <string name="permission_detect_new_call">Détecter un nouvel appel</string>
+    <string name="permission_read_call_status">Lire le statut de l\'appel</string>
+    <string name="permission_save_record_file">Sauvegarde de l\'enregistrement</string>
+    <!-- Waring inform -->
+    <string name="warning_device_no_support_voice_call">Enregistreur d\'appels n\'a pas pu enregistrer vos appels récents.
+     Redémarrez l\'appareil ou fermer le processus susceptible d\'utiliser le microphone.
+        Si le problème persiste, il est possible que votre appareil ne supporte pas l\'enregistrement d\'appels.</string>
+    <string name="warning_title">Avertissement</string>
+    <string name="checkbox_dont_show_again">Ne plus afficher</string>
+    <string name="dialog_inform_limit_inbox_title">Important</string>
+    <string name="dialog_inform_limit_inbox_content"><b>La boite de réception garde les 100 derniers appels (comme valeur par défaut). Vous pouvez néanmoins changer ce paramètre dans les réglages</b>.
+         \n\nEnregistreur d\'appels supprime automatiquement les appels que vous ne souhaitez pas enregistrer pour que vous n\'ayez pas à le faire manuellement.
+         \n\nSeuls les 100 derniers appels sont gardés (comme valeur par défaut). Si la capacité de la boite de réception est atteinte et un nouvel appel est enregistré, le plus ancien enregistrement est automatiquement supprimé.
+         \n\nVous pouvez sauvegarder autant d\'enregistrements que vous le désirez (<b>en ajoutant une note à l\'enregistrement et le basculant vers l\'onglet Sauvegardés</b>).
+         \n\nVeillez toujours à ce que vous sauvegardiez vos appels importants pour qu\'ils ne soient pas supprimés si la limite de la boite de réception est atteinte.(<b>en les basculant vers l\'onglet Sauvegardés</b>).</string>
+    <!-- About app -->
+    <string name="category_about_name">Informations</string>
+    <string name="about_app_version_title">Version de l\'appli</string>
+    <string name="about_app_license_title">Licenses</string>
+    <string name="privacy_policy">Règles de confidentialité</string>
+    <string name="about_app_get_all_app_title">Autres applications</string>
+    <string name="about_app_get_all_app_description">Notre équipe</string>
+    <string name="category_contact_us_name">Nous contacter</string>
+    <string name="feedback">Remarques</string>
+    <string name="about_app_feedback_title">Suggestions et rapports d\'erreurs</string>
+    <string name="about_app_smobile_on_googleplus_title">Notre équipe sur Google Plus</string>
+    <string name="about_app_translation_title">Service de traduction</string>
+    <string name="about_app_translation_description">Would you like to translate this app to your local language? Please send us an email to request app translation service.</string>
+    <string name="about_app_translation_body">I would like to translate this app to :</string>
+
+    <string name="library_license"><b>1.Libraries:</b> \n- MPAndroidChart \n- json_simple-1.1.jar \n- Android-Universal-Image-Loader</string>
+    <string name="resource_license"><b>3.Ressources:</b></string>
+    <string name="backlink_license">1. icons8.com \n2. 365psd.com \n3. iconsolid.com</string>
+    <string name="apache_license">http://www.apache.org/licenses/LICENSE-2.0.txt</string>
+    <string name="app_feedback_exception_no_app_handle">Aucune appli d\'emails n\'est installée sur votre appareil, installez-en une et réessayez.</string>
+    <!-- Cloud -->
+    <string name="sync_all_button">Synchroniser tout</string>
+    <string name="category_cloud_name">Connectez-vous à Dropbox</string>
+    <string name="category_backup_option_name">Options de sauvegarde</string>
+    <string name="cloud_sync_wifi_only_title">Synchronisez uniquement en WiFi</string>
+    <string name="cloud_sync_wifi_only_description">Utiliser WiFi uniquement pour sauvegarder sur Dropbox</string>
+    <string name="cloud_sync_automatic_title">Sauvegarder automatiquement l\'appel sur Dropbox</string>
+    <string name="cloud_sync_automatic_description">Sauvegarder automatiquement sur Dropbox quand un nouvel appel est enregistré et une connexion Internet est disponible</string>
+    <string name="no_internet">Merci de vérifier la connexion Internet</string>
+    <string name="unlink_dropbox">Vous n\'etes pas connecté à Dropbox</string>
+    <string name="warning_dialog_using_mobile_data_title">Avertissement</string>
+    <string name="warning_dialog_using_mobile_data_des">Vous utiliser un réseau 3G/4G, des frais de connexion peuvent s\'appliquer. Voulez-vous continuer?</string>
+    <string name="sync_notification_ticker_text">Synchroniser</string>
+    <string name="sync_notification_content_text">Synchronisation en cours</string>
+    <string name="sync_notification_content_title">"Veuillez patienter..\."</string>
+    <!-- For Storage fragment -->
+    <string name="storage_title">Stockage</string>
+    <string name="storage_btn_clear_data">Supprimer les données</string>
+    <string name="storage_graphic_data_title">Stockage de données</string>
+    <string name="storage_graphic_free_space">Disponible</string>
+    <string name="storage_graphic_used_record">Données enregistrées</string>
+    <string name="storage_graphic_number_record">Enregistrements</string>
+    <string name="storage_graphic_other_data">Autres données</string>
+    <string name="storage_graphic_name_folder">Dossier de sauvegarde</string>
+    <string name="dialog_change_name_folder_save_file">Dossier d\'enregistrement d\'appels</string>
+    <string name="dialog_change_name_folder_save_file_description">Nom : </string>
+    <string name="dialog_clear_all_data_title">Supprimer données</string>
+    <string name="dialog_clear_all_data_description">Voulez-vous supprimer tous les enregistrements de la boite de réception? Cette action est irréversible!</string>
+
+    <string name="string_search_hint">Nom, Numéro, Note</string>
+
+    <!-- Passcode screen-->
+    <string name="login_screen_title">Entrez le code</string>
+    <string name="passcodelock_numpad_0">0</string>
+    <string name="passcodelock_numpad_1">1</string>
+    <string name="passcodelock_numpad_2">2</string>
+    <string name="passcodelock_numpad_3">3</string>
+    <string name="passcodelock_numpad_4">4</string>
+    <string name="passcodelock_numpad_5">5</string>
+    <string name="passcodelock_numpad_6">6</string>
+    <string name="passcodelock_numpad_7">7</string>
+    <string name="passcodelock_numpad_8">8</string>
+    <string name="passcodelock_numpad_9">9</string>
+    <string name="passcode_title">Code</string>
+    <string name="passcode_reset_password">Réinitialiser le code</string>
+    <string name="wrong_lenght_password">Le code doit contenir 4 chiffres</string>
+    <string name="wrong_match_password">Le code saisi est incorrect, veuillez réessayer</string>
+    <string name="password_is_empty">Le code ne peut pas etre vide</string>
+    <string name="old_password_is_incorrect">Le code actuel est incorrect.</string>
+    <string name="dialog_reset_password_new_pass">Nouveau Code</string>
+    <string name="dialog_reset_password_old_pass">Ancien Code</string>
+    <string name="dialog_setup_password_txt_confirm_pass">Confirmer le code</string>
+    <string name="dialog_setup_password_txt_pass">Code</string>
+    <string name="dialog_setup_password_txt_title">Définir un code</string>
+    <string name="permission_write_contacts">écrire des contacts</string>
+    <!-- Rate dialog -->
+    <!-- Rate My Application -->
+    <string name="ratemyappdemo_info_label">Pour revoir cette fenetre, cliquer sur le bouton ci-après ou redémarrez l\'appli plusieurs fois</string>
+    <string name="ratemyappdemo_button_label">Noter cette appli</string>
+    <string name="ratemyapp_accept_button_label">Evaluer</string>
+    <string name="ratemyapp_later_button_label">Me le rappeler plutard</string>
+    <string name="ratemyapp_cancel_button_label">Non, merci</string>
+    <string name="title_activity_rateme_app">Evaluer l\'enregistreur d\'appels</string>
+    <string name="califica">Evaluer</string>
+    <string name="si">Si vous avez apprécié l\'appli</string>
+    <string name="please">, merci de laisser une notation de 5 étoiles sur le PlayStore./nMerci pour votre soutien!</string>
+    <string name="nav_rate">Donner une évaluation</string>
+
+    <string name="exit_msg">Appuyez encore une fois pour quitter</string>
+</resources>

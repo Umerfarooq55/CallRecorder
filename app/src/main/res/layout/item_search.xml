@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/item_search_txt_namecontact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/item_search_rl_time_container"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="TextView"
+        android:textSize="@dimen/item_call_record_namecontact_textsize"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/item_search_txt_phonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_search_txt_namecontact"
+        android:text="TextView"
+        android:textSize="@dimen/item_call_record_time_textsize" />
+
+    <RelativeLayout
+        android:id="@+id/item_search_rl_time_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true" >
+
+        <ImageView
+            android:id="@+id/item_search_record_img_status"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/ic_incoming" />
+
+        <TextView
+            android:id="@+id/item_search_record_txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_search_record_img_status"
+            android:layout_centerHorizontal="true"
+            android:text="12:00"
+            android:textSize="@dimen/item_call_record_time_textsize" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/item_search_txt_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_search_txt_phonenumber"
+        android:text="TextView"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="@dimen/item_call_record_time_textsize" />
+
+</RelativeLayout>

@@ -1,0 +1,100 @@
+{
+  "project_info": {
+    "project_number": "971308034576",
+    "firebase_url": "https://callrecorder-ca508.firebaseio.com",
+    "project_id": "callrecorder-ca508",
+    "storage_bucket": "callrecorder-ca508.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971308034576:android:916e493d129dcace",
+        "android_client_info": {
+          "package_name": "Automatic.PhoneRecorder.callrecorder2019"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971308034576-dgo0e6t2o4g3litv58rdveoe516t7p9j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Automatic.PhoneRecorder.callrecorder2019",
+            "certificate_hash": "b7d2b6e8941753b83a365adb4ec51f9c433fd7d5"
+          }
+        },
+        {
+          "client_id": "971308034576-fmrmj7m3v7ktebbq43asn8svpb7qcgef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYx_gF3xtsGmzRWOzG7tEKuHDDLj09SOg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971308034576-fmrmj7m3v7ktebbq43asn8svpb7qcgef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      },
+      "admob_app_id": "ca-app-pub-6257148475540238~8153154477"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971308034576:android:fe3807f7f3660fed",
+        "android_client_info": {
+          "package_name": "automatic.phonerecorder.callrecorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971308034576-12um84anmb510mqiloou0u86eqjl42kh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "automatic.phonerecorder.callrecorder",
+            "certificate_hash": "b7d2b6e8941753b83a365adb4ec51f9c433fd7d5"
+          }
+        },
+        {
+          "client_id": "971308034576-fmrmj7m3v7ktebbq43asn8svpb7qcgef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYx_gF3xtsGmzRWOzG7tEKuHDDLj09SOg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971308034576-fmrmj7m3v7ktebbq43asn8svpb7qcgef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

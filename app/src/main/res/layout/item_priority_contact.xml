@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/selectableItemBackground">
+
+    <com.loopj.android.image.SmartImageView
+        android:id="@+id/priority_contact_img_thumbnail"
+        android:layout_width="@dimen/priority_contact_item_thumbnail_width"
+        android:layout_height="@dimen/priority_contact_item_thumbnail_height"
+        android:layout_margin="5dp"
+        android:background="#fff"
+        android:src="@drawable/ic_person_img" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_margin="5dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/priority_contact_txt_displayname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/priority_contact_item_displayname_textsize"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="" />
+
+        <LinearLayout
+            android:id="@+id/priority_contact_ll_phone_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/ic_cellphones" />
+
+            <TextView
+                android:id="@+id/priority_contact_txt_phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/enableServiceHint"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

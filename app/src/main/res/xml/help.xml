@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/category_about_name" >
+        <Preference
+            android:key="key_about_app_version"
+            android:summary="1.0.0"
+            android:title="@string/about_app_version_title" />
+
+        <!--<Preference
+            android:key="key_about_app_license"
+            android:title="@string/about_app_license_title" />-->
+        
+        <Preference
+            android:key="key_about_app_get_all_app"
+
+            android:title="@string/about_app_get_all_app_title" />
+
+        <Preference
+            android:key="key_about_app_privacy"
+            android:title="@string/privacy_policy" />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/category_contact_us_name" >
+        <!--<Preference
+            android:key="key_about_app_translation"
+            android:summary="@string/about_app_translation_description"
+            android:title="@string/about_app_translation_title" />-->
+
+        <Preference
+            android:key="key_about_app_feedback"
+            android:title="@string/about_app_feedback_title" />
+        
+        <!--<Preference
+            android:key="key_about_app_smobile_on_googleplus"
+            android:title="@string/about_app_smobile_on_googleplus_title" />-->
+    </PreferenceCategory>
+
+</PreferenceScreen>

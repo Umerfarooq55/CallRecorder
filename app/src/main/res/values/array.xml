@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="file_type_out">
+        <item name="3gp">3GP</item>
+        <item name="wav">WAV</item>
+        <item name="mp4">MP4</item>
+        <item name="amr">AMR</item>
+    </string-array>
+    <string-array name="file_type_out_value">
+        <item name="3gp">1000</item>
+        <item name="wav">1001</item>
+        <item name="mp4">1002</item>
+        <item name="amr">1003</item>
+    </string-array>
+    <string-array name="audio_source">
+        <item name="mic">Mic</item>
+        <item name="voice_call">Voice Call</item>
+        <item name="voice_communication">Voice Communication</item>
+        <item name="camcorder">Camcorder</item>
+        <item name="voice_recognition">Voice Recognition</item>
+        <item name="voice_uplink">Voice UpLink</item>
+        <item name="voice_downlink">Voice DownLink</item>
+    </string-array>
+    <string-array name="audio_source_value">
+        <item name="mic">6000</item>
+        <item name="voice_call">6001</item>
+        <item name="voice_communication">6002</item>
+        <item name="camcorder">6003</item>
+        <item name="voice_recognition">6004</item>
+        <item name="voice_uplink">6005</item>
+        <item name="voice_downlink">6006</item>
+    </string-array>
+    <string-array name="mode_recorder_title">
+        <item name="record_all">All calls</item>
+        <item name="contacts_only">Contacts only</item>
+        <item name="priority_contacts">Priority contacts</item>
+        <item name="unknow_number_only">Unknown numbers only</item>
+    </string-array>
+    <string-array name="mode_recorder_value">
+        <item name="record_all">100</item>
+        <item name="contacts_only">101</item>
+        <item name="priority_contacts">102</item>
+        <item name="unknow_number_only">103</item>
+    </string-array>
+    <string-array name="inbox_size">
+        <item name="maximum_10">10</item>
+        <item name="maximum_50">50</item>
+        <item name="maximum_100">100</item>
+        <item name="maximum_500">500</item>
+        <item name="maximum_unlimited">Unlimited</item>
+    </string-array>
+    <string-array name="inbox_size_value">
+        <item name="maximum_10">10</item>
+        <item name="maximum_50">50</item>
+        <item name="maximum_100">100</item>
+        <item name="maximum_500">500</item>
+        <item name="maximum_unlimited">1000</item>
+    </string-array>
+    <string-array name="action_when_note">
+        <item name="automatic_save_recording">Automatic save to favorite</item>
+        <item name="ask_what_to_do">Ask what to do</item>
+        <item name="dont_save">Don\'t save to favorite</item>
+    </string-array>
+    <string-array name="action_when_note_value">
+        <item name="automatic_save_recording">700</item>
+        <item name="ask_what_to_do">701</item>
+        <item name="dont_save">702</item>
+    </string-array>
+</resources>

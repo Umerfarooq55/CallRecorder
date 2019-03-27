@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/category_audio_name" >
+        <automatic.phonerecorder.callrecorder.customview.ListPreferenceShowSummary
+            android:defaultValue="1000"
+            android:entries="@array/file_type_out"
+            android:entryValues="@array/file_type_out_value"
+            android:key="file_type_output"
+            android:summary="@string/out_put_file_type_description"
+            android:title="@string/out_put_file_title" />
+        <automatic.phonerecorder.callrecorder.customview.ListPreferenceShowSummary
+            android:defaultValue="6001"
+            android:entries="@array/audio_source"
+            android:entryValues="@array/audio_source_value"
+            android:key="key_audio_source"
+            android:title="@string/audio_source" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_notification_name" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:widgetLayout="@layout/switchcompat_preference"
+            android:key="is_enable_notication"
+            android:summary="@string/enable_notication_decription"
+            android:title="@string/enable_notication_title" />
+        <CheckBoxPreference
+            android:dependency="is_enable_notication"
+            android:key="notification_always_ask"
+            android:widgetLayout="@layout/switchcompat_preference"
+            android:summary="@string/enable_always_ask_description"
+            android:title="@string/enable_always_ask_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_filter_recorder" >
+        <automatic.phonerecorder.callrecorder.customview.ListPreferenceShowSummary
+            android:defaultValue="100"
+            android:entries="@array/mode_recorder_title"
+            android:entryValues="@array/mode_recorder_value"
+            android:key="mode_recorder"
+            android:summary="@string/mode_recorder_description"
+            android:title="@string/mode_recorder_title" />
+
+        <Preference
+            android:key="priority_contacts_manage"
+            android:summary="@string/priority_contacts_description"
+            android:title="@string/priority_contacts_title" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.smartcoach.callrecorder01"
+                android:targetClass="com.smartcoach.callrecorder01.PriorityContactsActivity" />
+
+        </Preference>
+
+        <automatic.phonerecorder.callrecorder.customview.ListPreferenceShowSummary
+            android:defaultValue="100"
+            android:entries="@array/inbox_size"
+            android:entryValues="@array/inbox_size_value"
+            android:key="inbox_size"
+            android:summary="@string/inbox_size_description"
+            android:title="@string/inbox_size_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/note" >
+        <automatic.phonerecorder.callrecorder.customview.ListPreferenceShowSummary
+            android:defaultValue="701"
+            android:entries="@array/action_when_note"
+            android:entryValues="@array/action_when_note_value"
+            android:key="action_when_note"
+            android:summary="@string/save_recording_note_description"
+            android:title="@string/save_recording_note_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_more_option_name" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="is_shake_cancel_record"
+            android:widgetLayout="@layout/switchcompat_preference"
+            android:summary="@string/shake_cancel_record_description"
+            android:title="@string/shake_cancel_record_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="is_enable_private_mode"
+            android:widgetLayout="@layout/switchcompat_preference"
+            android:summary="@string/enable_private_mode_description"
+            android:title="@string/enable_private_mode_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="is_use_24_hour_format"
+            android:widgetLayout="@layout/switchcompat_preference"
+            android:title="@string/use_24_hour_format" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="is_beep_sound_when_record"
+            android:widgetLayout="@layout/switchcompat_preference"
+            android:summary="@string/beep_sound_when_record_description"
+            android:title="@string/beep_sound_when_record_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

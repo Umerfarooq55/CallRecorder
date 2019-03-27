@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_call_record_height"
+    android:layout_gravity="center"
+    android:layout_margin="2dp"
+    android:elevation="3dp"
+    card_view:cardElevation="4dp"
+    card_view:cardCornerRadius="4dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp">
+
+        <com.loopj.android.image.SmartImageView
+            android:id="@+id/item_call_record_img_avatar"
+            android:layout_width="@dimen/item_call_record_avatar_width"
+            android:layout_height="@dimen/item_call_record_avatar_height"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="1dp"
+            android:background="#fff"
+            android:clickable="false"
+            android:tint="#FF9900"
+            android:src="@drawable/ic_person_img" />
+
+        <TextView
+            android:id="@+id/item_call_record_txt_namecontact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/item_call_record_txt_duration"
+            android:layout_toRightOf="@+id/item_call_record_img_avatar"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="@dimen/item_call_record_namecontact_textsize" />
+
+        <RelativeLayout
+            android:id="@+id/item_call_record_rl_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_call_record_txt_namecontact"
+            android:layout_toRightOf="@+id/item_call_record_img_avatar">
+
+            <ImageView
+                android:id="@+id/item_call_record_img_status"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/string_record"
+                android:src="@drawable/ic_incoming" />
+
+            <TextView
+                android:id="@+id/item_call_record_txt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/item_call_record_img_status"
+                android:textSize="@dimen/item_call_record_time_textsize" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/item_call_record_txt_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_call_record_rl_status"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/item_call_record_img_avatar"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/player_note_hint"
+            android:textColor="@color/enableServiceHint"
+            android:textSize="@dimen/item_call_record_time_textsize"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:id="@+id/item_call_record_imb_full_note"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/item_call_record_txt_namecontact"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="2dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_content_note" />
+
+        <TextView
+            android:id="@+id/item_call_record_txt_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:gravity="right"
+            android:textSize="@dimen/item_call_record_time_textsize" />
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/selected_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_call_record_height"
+        android:background="@color/selected_overlay"
+        android:visibility="invisible" />
+</android.support.v7.widget.CardView>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<ScrollView
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_layout" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/fragment_storage_rl_chart"
+            android:layout_width="fill_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_height="@dimen/fragment_storage_rl_chart_height"
+            android:background="@color/gray" />
+
+        <LinearLayout
+            android:id="@+id/fragment_storage_ll_information"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:layout_below="@+id/fragment_storage_rl_chart"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/fragment_storage_txt_save_folder_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/fragment_storage_txt_save_folder_label_textsize"
+                    android:text="@string/storage_graphic_name_folder" />
+
+                <TextView
+                    android:id="@+id/fragment_storage_btn_save_folder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/tabsScrollColor"
+                    android:textSize="@dimen/fragment_storage_btn_save_folder_textsize"
+                    android:singleLine="true"
+                    android:clickable="true"
+                    android:ellipsize="end"
+                    android:onClick="changeNameFolder"/>
+
+                <TextView
+                    android:id="@+id/fragment_storage_btn_cleardata_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="@dimen/fragment_storage_btn_cleardata_label_textsize"
+                    android:text="@string/storage_btn_clear_data" />
+
+                <ImageView
+                    android:id="@+id/fragment_storage_btn_cleardata"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_clean"
+                    android:onClick="clearData"
+                    android:contentDescription="@string/storage_btn_clear_data"
+                    android:background="@drawable/clean_data_selector" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.4"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:background="@color/gray" />
+
+                <RelativeLayout
+                    android:id="@+id/button1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"                   
+                    android:background="@drawable/available_circle_background" />
+
+                <View
+                    android:id="@+id/View01"
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:background="@color/gray" />
+
+                <RelativeLayout
+                    android:id="@+id/Button01"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/record_data_circle_background" />
+
+                <View
+                    android:id="@+id/View02"
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:background="@color/gray" />
+
+                <RelativeLayout
+                    android:id="@+id/Button02"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/other_data_circle_background" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/fragment_storage_txt_free_storage_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/storage_graphic_free_space"
+                        android:textColor="@color/actionmodeBackground"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="2"
+                        android:textSize="@dimen/fragment_storage_txt_free_storage_label_textsize" />
+
+                    <TextView
+                        android:id="@+id/fragment_storage_txt_free_storage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/fragment_storage_txt_used_storage_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/storage_graphic_used_record"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="2"
+                        android:textSize="@dimen/fragment_storage_txt_used_storage_label_textsize" />
+
+                    <TextView
+                        android:id="@+id/fragment_storage_txt_used_storage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/fragment_storage_txt_other_data_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/storage_graphic_other_data"
+                        android:textColor="@color/tabsScrollColor"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="2"
+                        android:textSize="@dimen/fragment_storage_txt_other_data_label_textsize" />
+
+                    <TextView
+                        android:id="@+id/fragment_storage_txt_other_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
+    <include
+        android:id="@+id/activity_player_ads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/ads_banner_layout" />
+</RelativeLayout>

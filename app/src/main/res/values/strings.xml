@@ -1,0 +1,251 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <array name="context_menu_item_priority_contact">
+        <item>Delete</item>
+        <item>View contact details</item>
+    </array>
+
+    <string name="app_name">Automatic Call Recorder - Free call recorder app 2019</string>
+
+    <!-- ads -->
+    <string name="app_id" translatable="false">ca-app-pub-2811663053384781~9976058958</string>
+    <string name="pub_id" translatable="false">pub-2811663053384781</string>
+    <string name="Interstitial" translatable="false">ca-app-pub-2811663053384781/7082657521</string>
+    <string name="banner_ad" translatable="false">ca-app-pub-6257148475540238/3583354076</string>
+    <string name="facebook_app_id">1053600484843378</string>
+    <string name="fb_login_protocol_scheme">fb1053600484843378</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="tab_inbox">INBOX</string>
+    <string name="tab_favorite">SAVED CALLS</string>
+
+    <!-- Menu -->
+    <string name="nav_cloud">Cloud Storage</string>
+    <string name="nav_storage">Call Recordings Manager</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_about">About Call Recorder Pro</string>
+    <string name="nav_share">Share app</string>
+    <string name="nav_more_option_title">Advanced options</string>
+    <string name="nav_rate">Rate on PlayStore</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="upload">Upload</string>
+    <string name="history">History</string>
+    <string name="detail">Details</string>
+    <string name="add_contact">Add contact</string>
+
+    <!-- Setting -->
+    <string name="category_audio_name">Audio Settings</string>
+    <string name="out_put_file_type_description">Select file format to use for saving the calls in storage folder</string>
+    <string name="out_put_file_title">Choose File Format</string>
+    <string name="audio_source">Choose Audio Source</string>
+    <string name="category_notification_name">Notifications</string>
+    <string name="enable_notication_title">Enable Call Recording Notification</string>
+    <string name="enable_notication_decription">Show notification on status bar when recording</string>
+    <string name="enable_always_ask_title">Always ask</string>
+    <string name="enable_always_ask_description">Ask before recording each call</string>
+    <string name="category_filter_recorder">Recording Filter</string>
+    <string name="mode_recorder_title">Recording Mode</string>
+    <string name="mode_recorder_description">Select recording mode from all numbers, contacts only.\.\.\etc</string>
+    <string name="priority_contacts_title">Priority Contacts</string>
+    <string name="priority_contacts_description">Manage contacts to be recorded (only available when Priority contacts mode is enabled)</string>
+    <string name="inbox_size_title">Inbox size</string>
+    <string name="inbox_size_description">Maximum number of recordings that can be saved in storage folder</string>
+    <string name="save_recording_note_title">Save recording</string>
+    <string name="save_recording_note_description">Save recording after call notes was added</string>
+    <string name="category_more_option_name">Advanced options</string>
+    <string name="shake_cancel_record_title">Record a call by shaking the phone</string>
+    <string name="shake_cancel_record_description">Shake device to automatically record/cancel a call recording</string>
+    <string name="enable_private_mode_title">Password Protection</string>
+    <string name="enable_private_mode_description">Enable password protection mode when opening the app</string>
+    <string name="use_24_hour_format">Use 24 hours format for call history</string>
+    <string name="beep_sound_when_record_title">Enable Beep sound notification</string>
+    <string name="beep_sound_when_record_description">Play a beep sound during the call every 30 seconds.</string>
+    <string name="dialog_warning_disable_notification_message">Your system might stop the app and thus cause stopping call recording.
+    \n \nAre you sure you want to disable notification?</string>
+    <string name="dialog_warning_over_inbox_limit_title">Warning</string>
+    <string name="dialog_warning_over_inbox_limit_message">Your recorded calls exceed your Inbox size limit.
+            In order to free your Inbox size, you will need to delete old records .\n Are you sure you want to continue?</string>
+    <!-- Note -->
+    <string name="note">Notes</string>
+
+    <!-- Notification -->
+    <string name="notification_stop_recording">Press to disable recording</string>
+    <string name="warning_unable_record">Call Recorder was unable to record calls</string>
+    <string name="record_impossible">Unfortunately, it is impossible to record calls in this device.
+    (Usually because another application/service is using the microphone in the background)</string>
+    <string name="string_warning_record_a_call">Do you want to record this call?</string>
+
+    <!-- common string -->
+    <string name="string_ok">OK</string>
+    <string name="string_yes">Yes</string>
+    <string name="string_no">No</string>
+    <string name="string_cancel">Cancel</string>
+    <string name="string_record">Record</string>
+    <string name="player_note_hint">No note</string>
+    <string name="unknow_number">Unknown Number</string>
+    <string name="empty_histoty_page">No recording found</string>
+    <string name="empty_contact_history">No history</string>
+    <string name="waiting_load_content">Please wait.\.\.</string>
+    <string name="header_context_menu">Select</string>
+    <!-- Date -->
+    <string name="days">days</string>
+    <string name="hours">hours</string>
+    <string name="minutes">minutes</string>
+    <string name="seconds">seconds</string>
+
+    <string name="selected_count">Selected</string>
+
+    <!-- Player -->
+    <string name="player_title">Recordings Player</string>
+    <string name="player_history_label">CONTACT HISTORY FROM </string>
+    <string name="player_save_success_notice">Note saved successfully</string>
+    <string name="player_save_unsuccess_notice">Failed to save the note</string>
+    <string name="player_history_from_inbox">INBOX</string>
+    <string name="player_history_from_favorite">FAVORITE</string>
+    <string name="ask_save_this_recording_dialog">Move this recording to Saved tab?</string>
+    <string name="share_this_record_dialog_title">Share this call</string>
+    <string name="contact_history_title">Contact History</string>
+    <string name="priority_contact_title">Priority Contacts</string>
+    <!-- Dialog -->
+    <string name="dialog_detail_phone_number">Phone number: </string>
+    <string name="dialog_detail_file_type">File type: </string>
+    <string name="dialog_detail_file_size">Recording Size: </string>
+    <string name="dialog_detail_file_duration">Duration: </string>
+    <string name="dialog_detail_file_path">File Path: </string>
+
+    <!-- file management -->
+    <string name="file_is_not_exist">This file was removed from Storage</string>
+    <!-- Permission -->
+    <string name="dialog_request_overlay_permision_message">You need to grant access to </string>
+    <string name="no_permission">Required permissions denied </string>
+    <string name="permission_record_audio">recording audio</string>
+    <string name="permission_read_contacts">reading contacts</string>
+    <string name="permission_write_contacts">writing contacts</string>
+    <string name="permission_detect_new_call">detecting new call</string>
+    <string name="permission_read_call_status">reading call status</string>
+    <string name="permission_save_record_file">saving recorded call</string>
+    <!-- Waring inform -->
+    <string name="warning_device_no_support_voice_call">Call Recorder was unable to record some of your last calls.
+ Try restarting your phone or closing the processus that is using the microphone.
+    If the problem persists, it probably means that your phone does not support call recording</string>
+    <string name="warning_title">Warning</string>
+    <string name="checkbox_dont_show_again">Don\'t show again</string>
+    <string name="dialog_inform_limit_inbox_title">Important information</string>
+    <string name="dialog_inform_limit_inbox_content"><b>The inbox keeps in the last 100 calls (as a default value). You can set a different size in the settings</b>.
+     \n\nCall Recorder automatically deletes the calls you don\'t want to save so you don\'t have to do it manually.
+     \n\nOnly the last 100 calls (as default value) are saved in the inbox and if the inbox limit is over, and a new call is recorded the oldest call in the inbox is automatically deleted.
+     \n\nYou can save as many calls as you want (<b>by adding a note to the call and moving it to the SAVED CALLS folder</b>).
+     \n\nAlways remember to save your important calls so it won\'t be deleted automatically if the Inbox Limit is over.(<b>by adding them to SAVED CALLS folder</b>).</string>
+    <!-- About app -->
+    <string name="category_about_name">Informations</string>
+    <string name="about_app_version_title">App version</string>
+    <string name="about_app_license_title">Licenses</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy_url" translatable="false">http://smartappssolutions.com/call-recorder-privacy-policy/</string>
+    <string name="about_app_get_all_app_title">More apps from our team</string>
+    <string name="about_app_get_all_app_description">From Our Team</string>
+    <string name="category_contact_us_name">Contact us</string>
+    <string name="feedback">Feedback</string>
+    <string name="about_app_feedback_title">Feedback &amp; Error reporting</string>
+    <string name="about_app_smobile_on_googleplus_title">Our Team on Google Plus</string>
+    <string name="about_app_translation_title">Translation Service</string>
+    <string name="about_app_translation_description">Would you like to translate this app to your local language? Please send us an email to request app translation service.</string>
+    <string name="about_app_translation_body">I would like to translate this app to :</string>
+
+    <string name="library_license"><b>1.Library:</b> \n- MPAndroidChart \n- json_simple-1.1.jar \n- Android-Universal-Image-Loader</string>
+    <string name="resource_license"><b>3.Resources:</b></string>
+    <string name="backlink_license">1. icons8.com \n2. 365psd.com \n3. iconsolid.com</string>
+    <string name="apache_license">http://www.apache.org/licenses/LICENSE-2.0.txt</string>
+    <string name="app_feedback_exception_no_app_handle">No email app is configured on your phone, install an email service provider and try again.</string>
+    <!-- Cloud -->
+    <string name="sync_all_button">Sync all</string>
+    <string name="category_cloud_name">Connect to your Dropbox Account</string>
+    <string name="category_backup_option_name">Backup Options</string>
+    <string name="cloud_sync_wifi_only_title">Sync Calls on Wi-Fi only</string>
+    <string name="cloud_sync_wifi_only_description">Use Wi-Fi only to save calls to Dropbox</string>
+    <string name="cloud_sync_automatic_title">Automatically save the call to Dropbox</string>
+    <string name="cloud_sync_automatic_description">Automatically save to Dropbox when a new call is recorded and Internet connection is enabled</string>
+    <string name="no_internet">Please check your Internet Connection</string>
+    <string name="unlink_dropbox">You are not logged in to Dropbox</string>
+    <string name="warning_dialog_using_mobile_data_title">Warning</string>
+    <string name="warning_dialog_using_mobile_data_des">You are using a 3G/4G data network, Data fees may apply. Do you want to continue?</string>
+    <string name="sync_notification_ticker_text">Sync</string>
+    <string name="sync_notification_content_text">Syncing to Dropbox</string>
+    <string name="sync_notification_content_title">"Please wait..\."</string>
+    <!-- For Storage fragment -->
+    <string name="storage_title">Storage</string>
+    <string name="storage_btn_clear_data">Delete data</string>
+    <string name="storage_graphic_data_title">DATA STORAGE</string>
+    <string name="storage_graphic_free_space">Available</string>
+    <string name="storage_graphic_used_record">Recorded data</string>
+    <string name="storage_graphic_number_record">Records</string>
+    <string name="storage_graphic_other_data">Other data</string>
+    <string name="storage_graphic_name_folder">Storage folder</string>
+    <string name="dialog_change_name_folder_save_file">Call recordings Folder</string>
+    <string name="dialog_change_name_folder_save_file_description">Name : </string>
+    <string name="dialog_clear_all_data_title">Clear data</string>
+    <string name="dialog_clear_all_data_description">Are you sure you want to delete all recordings in Inbox folder? This action is irreversible!</string>
+
+    <string name="string_search_hint">Name, Number, Note</string>
+
+    <!-- Passcode screen-->
+    <string name="login_screen_title">Enter password</string>
+    <string name="passcodelock_numpad_0">0</string>
+    <string name="passcodelock_numpad_1">1</string>
+    <string name="passcodelock_numpad_2">2</string>
+    <string name="passcodelock_numpad_3">3</string>
+    <string name="passcodelock_numpad_4">4</string>
+    <string name="passcodelock_numpad_5">5</string>
+    <string name="passcodelock_numpad_6">6</string>
+    <string name="passcodelock_numpad_7">7</string>
+    <string name="passcodelock_numpad_8">8</string>
+    <string name="passcodelock_numpad_9">9</string>
+    <string name="passcode_title">PassCode</string>
+    <string name="passcode_reset_password">Reset Password</string>
+    <string name="wrong_lenght_password">Password must be equal to 4 numbers</string>
+    <string name="wrong_match_password">The password didn\'t match, please try again.</string>
+    <string name="password_is_empty">The password can\'t be blank.</string>
+    <string name="old_password_is_incorrect">The current password is incorrect.</string>
+    <string name="dialog_reset_password_new_pass">New Password</string>
+    <string name="dialog_reset_password_old_pass">Old Password</string>
+    <string name="dialog_setup_password_txt_confirm_pass">Confirm Password</string>
+    <string name="dialog_setup_password_txt_pass">Password</string>
+    <string name="dialog_setup_password_txt_title">Setup Password</string>
+
+    <!-- Rate dialog -->
+    <!-- Rate My Application -->
+    <string name="ratemyappdemo_info_label">To view the RateMyApp dialog, either click the button below or restart this app 3 times.</string>
+    <string name="ratemyappdemo_button_label">RateMyApp</string>
+    <string name="ratemyapp_accept_button_label">Rate Now!</string>
+    <string name="ratemyapp_later_button_label">Remind me later</string>
+    <string name="ratemyapp_cancel_button_label">No, thank you</string>
+    <string name="title_activity_rateme_app">RatemeApp</string>
+    <string name="califica">Rate</string>
+    <string name="si">If you enjoyed</string>
+    <string name="please">, please take a moment to rate it 5 stars on PlayStore! Thank you for your support!</string>
+
+
+    <string name="exit_msg">Press once again to exit</string>
+    <string name="nav_troubleshooting">Troubleshooting</string>
+    <string name="troubleshooting_title">Instructions + Troubleshooting tips</string>
+    <string name="trouble_shooting">
+        \nPlease note that when a new call is recorded, you should restart the app so that the newly recorded call can show up in the recordings list.\n
+\n1. Please note that some devices are not compatible or does not allow call recording and this is something we have unfortunately no control over.
+\n2. Please be sure that your device does not have more than one call recording app, otherwise, compatibility issues may occur.
+\n3. If the app does not record calls, please restart your device and try again. If the problem persists, then your device might not support call recording.
+\n4. Some devices record low voice volume, in this case, please enable your phone speaker to record better sound.
+\n5. This app might not be working when you are using other apps to record something, such as wechat, LINE: Free Calls and Messages, voice recorder or other call recorder.
+\n6. If call recording does not work with the default settings, please try selecting WAV, 3GPP, MP4 or AMR audio encoding format, if MP3 is not working properly on your device.
+\n7. If you get an error like "msg_creating_file_error", please change recording destination folder to any other path by clicking on the \"storage manager\" and choosing another saving folder.
+\n8. If you get "Sorry recording starting failed", please try changing some recording settings like the recording Audio source or sample rate.\n
+    </string>
+    <string name="UnablegetName" tools:ignore="MissingTranslation">No Number (Explain)</string>
+
+    <string name="new_Policy" translatable="false">We extremely apologize you for not showing the phone numbers of only outgoing calls. The reason behind this alteration is Google new policy of security, which states that no app is permitted to reveal numbers of outgoing
+        calls. For more information, you can visit this link:</string>
+</resources>

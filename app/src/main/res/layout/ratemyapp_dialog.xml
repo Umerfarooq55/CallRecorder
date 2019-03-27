@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:id="@+id/ratemyapp_dialog_header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="6dip"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:id="@+id/ratemyapp_dialog_title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dip"
+            android:layout_marginLeft="10dip"
+            android:gravity="center"
+            android:textColor="#2d2d2d"
+            android:textSize="25dip"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/ratemyapp_dialog_title_textview"
+            android:layout_centerInParent="true"
+            android:src="@drawable/splash_icon" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ratemyapp_dialog_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratemyapp_dialog_header_layout"
+        android:orientation="vertical"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip" >
+
+        <TextView
+            android:id="@+id/ratemyapp_dialog_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dip"
+            android:textColor="#2d2d2d"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ratemyapp_dialog_accept_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratemyapp_dialog_body"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="6dip" >
+
+        <Button
+            android:id="@+id/ratemyapp_dialog_accept_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/toolbarBackground"
+            android:text="@string/ratemyapp_accept_button_label"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ratemyapp_dialog_later_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratemyapp_dialog_accept_button_layout"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="6dip" >
+
+        <Button
+            android:id="@+id/ratemyapp_dialog_later_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#25909a"
+            android:text="@string/ratemyapp_later_button_label"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ratemyapp_dialog_cancel_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratemyapp_dialog_later_button_layout"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="6dip" >
+
+        <Button
+            android:id="@+id/ratemyapp_dialog_cancel_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray"
+            android:text="@string/ratemyapp_cancel_button_label"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

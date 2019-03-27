@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="preference_category_account_cloud"
+        android:title="@string/category_cloud_name" >
+        <Preference
+            android:icon="@drawable/ic_drive"
+            android:key="key_drive_account"
+            android:shouldDisableView="true"
+            android:title="Drive" />
+        <Preference
+            android:icon="@drawable/ic_dropbox"
+            android:key="key_dropbox_account"
+            android:title="Dropbox" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_backup_option_name" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="cloud_sync_wifi_only"
+            android:widgetLayout="@layout/switchcompat_preference"
+            android:summary="@string/cloud_sync_wifi_only_description"
+            android:title="@string/cloud_sync_wifi_only_title" />
+        <CheckBoxPreference
+            android:key="cloud_sync_automatic"
+            android:widgetLayout="@layout/switchcompat_preference"
+            android:title="@string/cloud_sync_automatic_title"
+            android:summary="@string/cloud_sync_automatic_description" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

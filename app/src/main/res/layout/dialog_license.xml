@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/fragment_help_txt_library_license"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/library_license"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/fragment_help_rl_library_license"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_help_txt_library_license"
+            android:layout_marginTop="10dp"
+            android:background="#d3d3d3"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/fragment_help_txt_content_lib_license"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:autoLink="web"
+                android:text="@string/apache_license"
+                android:textSize="13dp"
+                android:textStyle="italic" />
+        </RelativeLayout>
+
+        
+
+        <TextView
+            android:id="@+id/fragment_help_txt_resource_license"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_help_rl_library_license"
+            android:text="@string/resource_license"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/fragment_help_rl_res_license"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_help_txt_resource_license"
+            android:layout_marginTop="10dp"
+            android:background="#d3d3d3"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/fragment_help_txt_content_res_license"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:autoLink="web"
+                android:text="@string/backlink_license"
+                android:textSize="13dp"
+                android:textStyle="italic" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

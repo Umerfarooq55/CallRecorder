@@ -1,0 +1,56 @@
+    <resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">10dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="item_call_record_height">75dp</dimen>
+    <dimen name="item_call_record_avatar_width">80dp</dimen>
+    <dimen name="item_call_record_avatar_height">80dp</dimen>
+    <!-- Dialog -->
+    <dimen name="dialog_ask_when_record_btn_record_textsize">15dp</dimen>
+    <dimen name="dialog_detail_txt_time_textsize">15dp</dimen>
+    <dimen name="dialog_detail_txt_namecontact_textsize">21dp</dimen>
+    <dimen name="dialog_inform_inbox_limitation_context_textsize">17sp</dimen>
+
+    <!--Listview-->
+    <dimen name="header_listview_textSeparator_textsize">17sp</dimen>
+    <dimen name="item_call_record_namecontact_textsize">18sp</dimen>
+    <dimen name="item_call_record_time_textsize">13sp</dimen>
+    <dimen name="header_listview_height">20dp</dimen>
+    <dimen name="fragment_inbox_txt_emtry_content_textsize">30dp</dimen>
+
+    <!-- Player -->
+    <dimen name="player_margin_left">10dp</dimen>
+    <dimen name="player_margin_right">10dp</dimen>
+    <dimen name="player_margin_top">10dp</dimen>
+    <dimen name="player_txt_datetime_texsize">13sp</dimen>
+    <dimen name="player_txt_datetime_margin_top">10dp</dimen>
+    <dimen name="player_txt_history_label_textsize">14sp</dimen>
+    <dimen name="player_controller_bar_height">55dp</dimen>
+    <dimen name="player_note_textsize">18sp</dimen>
+    <!-- Fragment Storage -->
+    <dimen name="fragment_storage_rl_chart_height">270dp</dimen>
+    <dimen name="fragment_storage_txt_save_folder_label_textsize">20dp</dimen>
+    <dimen name="fragment_storage_btn_save_folder_textsize">14dp</dimen>
+    <dimen name="fragment_storage_btn_cleardata_label_textsize">20dp</dimen>
+    <dimen name="fragment_storage_txt_free_storage_label_textsize">20dp</dimen>
+    <dimen name="fragment_storage_txt_used_storage_label_textsize">20dp</dimen>
+    <dimen name="fragment_storage_txt_other_data_label_textsize">20dp</dimen>
+    <!-- Priority listview -->
+    <dimen name="priority_contact_item_thumbnail_width">50dp</dimen>
+    <dimen name="priority_contact_item_thumbnail_height">50dp</dimen>
+    <dimen name="priority_contact_item_displayname_textsize">15dp</dimen>
+    <!-- Login -->
+    <dimen name="keypad_width">65dp</dimen>
+    <dimen name="keypad_height">65dp</dimen>
+    <dimen name="keypad_margin">5dp</dimen>
+    <dimen name="keypad_textsize">22dp</dimen>
+    <dimen name="login_title_enter_password_textsize">28sp</dimen>
+    <dimen name="button_erase_pading">15dp</dimen>
+    <dimen name="pin_field_width">20dp</dimen>
+    <dimen name="pin_field_height">20dp</dimen>
+</resources>

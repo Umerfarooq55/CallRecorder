@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:background="#00000000" >
+    </ListView>
+
+    <include
+        android:id="@+id/activity_dropbox_ads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/ads_banner_layout" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/footer_cloud_account_btn_sync_all"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_sync_all"
+        android:textColor="@color/white"
+        android:text="@string/sync_all_button" />
+
+</LinearLayout>
