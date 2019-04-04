@@ -6,8 +6,12 @@ import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -24,10 +28,9 @@ public class SplashActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        Fabric.with(this, new Crashlytics());
+        Fabric.with(this, new Crashlytics());
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("Roboto-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
                 .build()
         );
         setContentView(R.layout.splash);
@@ -38,5 +41,4 @@ public class SplashActivity extends AppCompatActivity{
         startActivity(intent);
         finish();
     }
-
 }

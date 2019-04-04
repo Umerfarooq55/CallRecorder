@@ -133,7 +133,7 @@
         <service android:name="automatic.phonerecorder.callrecorder.controller.VoiceRecoderService" />
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="79d563ff474db9e016a089aed8a542f76f6b81da" />
+            android:value="630acef8a2c4e3c18340de64818ff4d14014980b" />
     </application>
 
     </manifest>

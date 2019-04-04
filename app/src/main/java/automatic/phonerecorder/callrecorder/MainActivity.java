@@ -31,16 +31,21 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 //Fabric
 //import com.crashlytics.android.Crashlytics;
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.CacheFlag;
+
+import com.facebook.ads.InterstitialAd;
+import com.facebook.ads.InterstitialAdListener;
 import com.google.ads.mediation.admob.AdMobAdapter;
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -59,13 +64,14 @@ import automatic.phonerecorder.callrecorder.utils.Utilities;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.EnumSet;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, InterstitialAdListener {
 
     //private VoicePhoneReceiver voicePhoneReceiver;
     private IntentFilter mIntentFilter;
@@ -89,10 +95,11 @@ public class MainActivity extends AppCompatActivity
     private PasscodeScreen mPasscode;
     private FirebaseAnalytics mFirebaseAnalytics;
     // For admob
-    private AdView adView;
-    InterstitialAd mInterstitialAd;
+    InterstitialAd interstitialAd;
     public static int counter = 1;
     public static int frequence = 3;
+    private com.facebook.ads.AdView bannerAdView;
+    FrameLayout bannerAdContainer;
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -105,7 +112,6 @@ public class MainActivity extends AppCompatActivity
         }
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("Roboto-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
                 .build()
         );
         mContext = this;
@@ -116,9 +122,9 @@ public class MainActivity extends AppCompatActivity
 
         RateMyApp rmaTemp = new RateMyApp(this);
         rmaTemp.app_launched();
-
-        MobileAds.initialize(this,
-                getResources().getString(R.string.app_id));
+//
+//        MobileAds.initialize(this,
+//                getResources().getString(R.string.app_id));
         InitInterstitial();
         Initbannerad();
 
@@ -472,16 +478,25 @@ public class MainActivity extends AppCompatActivity
 
     private void Initbannerad()
     {
-        adView = findViewById(R.id.adView_main);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
-        adView.setAdListener(new AdListener(){
-            @Override
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-                Toast.makeText(mContext, ""+i, Toast.LENGTH_SHORT).show();
-            }
-        });
+
+
+        if (bannerAdView != null) {
+            bannerAdView.destroy();
+            bannerAdView = null;
+        }
+        bannerAdContainer = findViewById(R.id.adView_main);
+        boolean isTablet = false;
+        bannerAdView = new com.facebook.ads.AdView(MainActivity.this, getString(R.string.BPass),
+                isTablet ? AdSize.BANNER_HEIGHT_90 : AdSize.BANNER_HEIGHT_50);
+
+        // Reposition the ad and add it to the view hierarchy.
+        bannerAdContainer.addView(bannerAdView);
+
+        // Set a listener to get notified on changes or when the user interact with the ad.
+//        bannerAdView.setAdListener(TroubleshootingActivity.this);
+
+        // Initiate a request to load an ad.
+        bannerAdView.loadAd();
     }
 
     private void logUser() {
@@ -501,32 +516,70 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void InitInterstitial() {
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.Interstitial));
-        requestNewInterstitial();
+        if (interstitialAd != null) {
+            interstitialAd.destroy();
+            interstitialAd = null;
+        }
 
-        mInterstitialAd.setAdListener(new AdListener() {
 
-            @Override
-            public void onAdClosed() {
-                requestNewInterstitial();
-                super.onAdClosed();
-            }
-        });
+        // Create the interstitial unit with a placement ID (generate your own on the Facebook app settings).
+        // Use different ID for each ad placement in your app.
+        interstitialAd = new com.facebook.ads.InterstitialAd(
+                MainActivity.this,
+                getString(R.string.ipass));
+
+        // Set a listener to get notified on changes or when the user interact with the ad.
+        interstitialAd.setAdListener(MainActivity.this);
+
+        // Load a new interstitial.
+        interstitialAd.loadAd(EnumSet.of(CacheFlag.VIDEO));
     }
 
-    private void requestNewInterstitial() {
-        AdRequest adRequest = new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, GDPR.getBundleAd(this)).build();
-        mInterstitialAd.loadAd(adRequest);
-    }
 
     private void showInterstitialAd() {
 
-            if (mInterstitialAd.isLoaded()) {
-                mInterstitialAd.show();
-        }
+
+            if (interstitialAd == null || !interstitialAd.isAdLoaded()) {
+                // Ad not ready to show.
+                InitInterstitial();
+            } else {
+                // Ad was loaded, show it!
+                interstitialAd.show();
+
+            }
+
     }
     public Activity getActivity() {
         return this;
+    }
+
+    @Override
+    public void onInterstitialDisplayed(Ad ad) {
+
+    }
+
+    @Override
+    public void onInterstitialDismissed(Ad ad) {
+  InitInterstitial();
+    }
+
+    @Override
+    public void onError(Ad ad, AdError adError) {
+
+    }
+
+    @Override
+    public void onAdLoaded(Ad ad) {
+
+    }
+
+    @Override
+    public void onAdClicked(Ad ad) {
+
+    }
+
+    @Override
+    public void onLoggingImpression(Ad ad) {
+
     }
 }

@@ -19,11 +19,18 @@ import android.widget.LinearLayout;
 import automatic.phonerecorder.callrecorder.utils.GDPR;
 import automatic.phonerecorder.callrecorder.utils.MyConstants;
 import automatic.phonerecorder.callrecorder.utils.Utilities;
+
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.CacheFlag;
+import com.facebook.ads.InterstitialAd;
+import com.facebook.ads.InterstitialAdListener;
 import com.google.ads.mediation.admob.AdMobAdapter;
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+
+
+import java.util.EnumSet;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -34,7 +41,7 @@ import static automatic.phonerecorder.callrecorder.MainActivity.frequence;
 /**
  * Created by Anh Son on 6/27/2016.
  */
-public class HelpActivity extends PreferenceActivity implements MyConstants, Preference.OnPreferenceClickListener {
+public class HelpActivity extends PreferenceActivity implements MyConstants, Preference.OnPreferenceClickListener, InterstitialAdListener {
     private Context mContext;
 
     private Preference mAppVersion;
@@ -44,14 +51,13 @@ public class HelpActivity extends PreferenceActivity implements MyConstants, Pre
     private Preference mFeedback;
     /*private Preference mSmobileOnWeb;
     private Preference mTranslation;*/
-    InterstitialAd mInterstitialAd;
+    InterstitialAd interstitialAd;
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("Roboto-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
                 .build()
         );
         LinearLayout root = (LinearLayout) findViewById(android.R.id.list).getParent().getParent().getParent();
@@ -80,8 +86,8 @@ public class HelpActivity extends PreferenceActivity implements MyConstants, Pre
         addPreferencesFromResource(R.xml.help);
         getListView().setDivider(new ColorDrawable(Color.TRANSPARENT));
         initUI();
-        MobileAds.initialize(this,
-                getResources().getString(R.string.app_id));
+//        MobileAds.initialize(this,
+//                getResources().getString(R.string.app_id));
         InitInterstitial();
 
     }
@@ -233,37 +239,73 @@ public class HelpActivity extends PreferenceActivity implements MyConstants, Pre
     }
 
     private void InitInterstitial() {
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.Interstitial));
-        requestNewInterstitial();
+        if (interstitialAd != null) {
+            interstitialAd.destroy();
+            interstitialAd = null;
+        }
 
-        mInterstitialAd.setAdListener(new AdListener() {
 
-            @Override
-            public void onAdClosed() {
-                requestNewInterstitial();
-                super.onAdClosed();
-            }
-        });
+        // Create the interstitial unit with a placement ID (generate your own on the Facebook app settings).
+        // Use different ID for each ad placement in your app.
+        interstitialAd = new com.facebook.ads.InterstitialAd(
+                HelpActivity.this,
+                getString(R.string.ipass));
+
+        // Set a listener to get notified on changes or when the user interact with the ad.
+        interstitialAd.setAdListener(HelpActivity.this);
+
+        // Load a new interstitial.
+        interstitialAd.loadAd(EnumSet.of(CacheFlag.VIDEO));
 
 
     }
 
-    private void requestNewInterstitial() {
-        AdRequest adRequest = new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, GDPR.getBundleAd(this)).build();
-        mInterstitialAd.loadAd(adRequest);
-    }
 
     private void showInterstitialAd() {
         if (counter==frequence) {
-            if (mInterstitialAd.isLoaded()) {
-                mInterstitialAd.show();
+            if (interstitialAd == null || !interstitialAd.isAdLoaded()) {
+                // Ad not ready to show.
+                InitInterstitial();
+            } else {
+                // Ad was loaded, show it!
+                interstitialAd.show();
+
             }
             counter =1;
         }
         else {
             counter++;
         }
+    }
+
+    @Override
+    public void onInterstitialDisplayed(Ad ad) {
+
+    }
+
+    @Override
+    public void onInterstitialDismissed(Ad ad) {
+InitInterstitial();
+    }
+
+    @Override
+    public void onError(Ad ad, AdError adError) {
+
+    }
+
+    @Override
+    public void onAdLoaded(Ad ad) {
+
+    }
+
+    @Override
+    public void onAdClicked(Ad ad) {
+
+    }
+
+    @Override
+    public void onLoggingImpression(Ad ad) {
+
     }
 }
 

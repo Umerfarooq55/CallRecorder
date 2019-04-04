@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.app.Activity;
@@ -27,6 +28,15 @@ import android.content.IntentSender;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.CacheFlag;
+
+import com.facebook.ads.InterstitialAd;
+import com.facebook.ads.InterstitialAdListener;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -51,16 +61,11 @@ import automatic.phonerecorder.callrecorder.utils.PreferUtils;
 import com.dropbox.client2.DropboxAPI;
 import com.dropbox.client2.android.AndroidAuthSession;
 import com.dropbox.client2.session.AppKeyPair;
-import com.google.ads.mediation.admob.AdMobAdapter;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
-
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.EnumSet;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -72,13 +77,13 @@ import static automatic.phonerecorder.callrecorder.MainActivity.frequence;
  * Created by Anh Son on 6/27/2016.
  */
 public class CloudActivity extends PreferenceActivity
-        implements MyConstants,View.OnClickListener,Preference.OnPreferenceClickListener {
+        implements MyConstants,View.OnClickListener,Preference.OnPreferenceClickListener, InterstitialAdListener {
     private Context mContext;
 
     public static DropboxAPI<AndroidAuthSession> mDropboxApi;
     private Button mSyncAll;
     private Preference mDrive, mDropbox;
-    InterstitialAd mInterstitialAd;
+    InterstitialAd interstitialAd;
     private AdView adView;
 
     private static final String TAG = "drive-quickstart";
@@ -90,6 +95,8 @@ public class CloudActivity extends PreferenceActivity
     private DriveClient mDriveClient;
     private DriveResourceClient mDriveResourceClient;
     private Bitmap mBitmapToSave;
+    private com.facebook.ads.AdView bannerAdView;
+    FrameLayout bannerAdContainer;
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -99,7 +106,6 @@ public class CloudActivity extends PreferenceActivity
         super.onPostCreate(savedInstanceState);
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("Roboto-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
                 .build()
         );
         LinearLayout root = (LinearLayout) findViewById(android.R.id.list).getParent().getParent().getParent();
@@ -122,8 +128,8 @@ public class CloudActivity extends PreferenceActivity
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
         mContext = this;
-        MobileAds.initialize(this,
-                getResources().getString(R.string.app_id));
+//        MobileAds.initialize(this,
+//                getResources().getString(R.string.app_id));
         InitInterstitial();
         getPreferenceManager()
                 .setSharedPreferencesName(MyConstants.PREFS_NAME);
@@ -407,31 +413,37 @@ public class CloudActivity extends PreferenceActivity
     }
 
     private void InitInterstitial() {
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.Interstitial));
-        requestNewInterstitial();
+        if (interstitialAd != null) {
+            interstitialAd.destroy();
+            interstitialAd = null;
+        }
 
-        mInterstitialAd.setAdListener(new AdListener() {
 
-            @Override
-            public void onAdClosed() {
-                requestNewInterstitial();
-                super.onAdClosed();
-            }
-        });
+        // Create the interstitial unit with a placement ID (generate your own on the Facebook app settings).
+        // Use different ID for each ad placement in your app.
+        interstitialAd = new InterstitialAd(
+               CloudActivity.this,
+                getString(R.string.ipass));
 
+        // Set a listener to get notified on changes or when the user interact with the ad.
+        interstitialAd.setAdListener(CloudActivity.this);
+
+        // Load a new interstitial.
+        interstitialAd.loadAd(EnumSet.of(CacheFlag.VIDEO));
 
     }
 
-    private void requestNewInterstitial() {
-        AdRequest adRequest = new AdRequest.Builder().addNetworkExtrasBundle(AdMobAdapter.class, GDPR.getBundleAd(this)).build();
-        mInterstitialAd.loadAd(adRequest);
-    }
+
 
     private void showInterstitialAd() {
         if (counter==frequence) {
-            if (mInterstitialAd.isLoaded()) {
-                mInterstitialAd.show();
+            if (interstitialAd == null || !interstitialAd.isAdLoaded()) {
+                // Ad not ready to show.
+                InitInterstitial();
+            } else {
+                // Ad was loaded, show it!
+                interstitialAd.show();
+
             }
             counter =1;
         }
@@ -441,9 +453,25 @@ public class CloudActivity extends PreferenceActivity
     }
     private void Initbannerad()
     {
-        adView = findViewById(R.id.adView_main);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+
+
+        if (bannerAdView != null) {
+            bannerAdView.destroy();
+            bannerAdView = null;
+        }
+        bannerAdContainer = findViewById(R.id.adView_main);
+        boolean isTablet = false;
+        bannerAdView = new com.facebook.ads.AdView(CloudActivity.this, getString(R.string.BPass),
+                isTablet ? AdSize.BANNER_HEIGHT_90 : AdSize.BANNER_HEIGHT_50);
+
+        // Reposition the ad and add it to the view hierarchy.
+        bannerAdContainer.addView(bannerAdView);
+
+        // Set a listener to get notified on changes or when the user interact with the ad.
+//        bannerAdView.setAdListener(TroubleshootingActivity.this);
+
+        // Initiate a request to load an ad.
+        bannerAdView.loadAd();
     }
     /** Start sign in activity. */
     private void signIn() {
@@ -569,5 +597,35 @@ public class CloudActivity extends PreferenceActivity
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onInterstitialDisplayed(Ad ad) {
+
+    }
+
+    @Override
+    public void onInterstitialDismissed(Ad ad) {
+        InitInterstitial();
+    }
+
+    @Override
+    public void onError(Ad ad, AdError adError) {
+
+    }
+
+    @Override
+    public void onAdLoaded(Ad ad) {
+
+    }
+
+    @Override
+    public void onAdClicked(Ad ad) {
+
+    }
+
+    @Override
+    public void onLoggingImpression(Ad ad) {
+
     }
 }

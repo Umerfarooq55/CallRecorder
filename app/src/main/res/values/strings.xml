@@ -248,4 +248,6 @@
 
     <string name="new_Policy" translatable="false">We extremely apologize you for not showing the phone numbers of only outgoing calls. The reason behind this alteration is Google new policy of security, which states that no app is permitted to reveal numbers of outgoing
         calls. For more information, you can visit this link:</string>
+    <string name="BPass" translatable="false">396971497752028_396973157751862</string>
+    <string name="ipass" translatable="false">396971497752028_396977161084795</string>
 </resources>

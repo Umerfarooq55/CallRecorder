@@ -7,17 +7,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.FrameLayout;
 
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class TroubleshootingActivity extends AppCompatActivity {
+public class TroubleshootingActivity extends AppCompatActivity  {
 
-    private AdView adView;
+    private AdView bannerAdView;
+    FrameLayout bannerAdContainer;
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -30,7 +33,6 @@ public class TroubleshootingActivity extends AppCompatActivity {
         }
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("Roboto-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
                 .build()
         );
         setContentView(R.layout.activity_troubleshooting);
@@ -45,12 +47,17 @@ public class TroubleshootingActivity extends AppCompatActivity {
             }
         });
 
-        MobileAds.initialize(this,
-                getResources().getString(R.string.app_id));
 
         Initbannerad();
     }
-
+    @Override
+    public void onDestroy() {
+        if (bannerAdView != null) {
+            bannerAdView.destroy();
+            bannerAdView = null;
+        }
+        super.onDestroy();
+    }
     @Override
     public void onBackPressed()
     {
@@ -58,8 +65,23 @@ public class TroubleshootingActivity extends AppCompatActivity {
     }
     private void Initbannerad()
     {
-        adView = findViewById(R.id.adView_main);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+
+        if (bannerAdView != null) {
+            bannerAdView.destroy();
+            bannerAdView = null;
+        }
+        bannerAdContainer = findViewById(R.id.adView_main);
+        boolean isTablet = false;
+        bannerAdView = new AdView(TroubleshootingActivity.this, getString(R.string.BPass),
+                isTablet ? AdSize.BANNER_HEIGHT_90 : AdSize.BANNER_HEIGHT_50);
+
+        // Reposition the ad and add it to the view hierarchy.
+        bannerAdContainer.addView(bannerAdView);
+
+        // Set a listener to get notified on changes or when the user interact with the ad.
+//        bannerAdView.setAdListener(TroubleshootingActivity.this);
+
+        // Initiate a request to load an ad.
+        bannerAdView.loadAd();
     }
 }
